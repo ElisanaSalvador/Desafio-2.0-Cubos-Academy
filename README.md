@@ -1,62 +1,51 @@
-![](https://i.imgur.com/xG74tOh.png)
+![frete](https://github.com/ElisanaSalvador/Desafio-2.0-Cubos-Academy/assets/141875584/a1b4de95-90fa-4eed-848d-b77ab0b603af)
 
-# Exercício 01
 
-## Cálculo de frete
+## API de Cálculo de frete
 
-Vamos criar uma API para cálcular o frete de um produto.
+Esta é uma API para cálcular o frete de um produto.
 
-A nossa API deverá possuir três rotas e todas utilizarão o método **GET**.
+Para executar o projeto usei o Visual Studio Code que pode ser encontrado neste link: https://code.visualstudio.com/download.
+Utilizei a biblioteca:  nodemon 3.0.1
 
-A rota **GET** `/produtos` deverá fazer a listagem dos produtos que estão listados no arquivo `produtos.js`, na pasta `bancodedados`.
+Esta API possui três rotas e todas utilizam o método **GET**, sendo elas:
 
-A rota **GET** `/produtos/:idProduto` deverá fazer o detalhamento de um produto através do `id`, passado como parâmetro na rota.
+A rota **GET** `/produtos` que lista os produtos que estão no arquivo `produtos.js`, na pasta `bancodedados`.
 
-A rota **GET** `/produtos/:idProduto/frete/:cep` receberá dois parâmetros de rota. O primeiro `idProduto` receberá o id do produto que será calculado o frete, e o segundo `cep` receberá o cep (sem pontuação) para que seja encontrado o estado referente ao cep informado.
+A rota **GET** `/produtos/:idProduto` faz o detalhamento de um produto através do `id`, passado como parâmetro na rota.
 
-Esta rota deverá calcular o frete do produto de acordo com as regras abaixo.
+A rota **GET** `/produtos/:idProduto/frete/:cep` recebe dois parâmetros de rota. O primeiro `idProduto` receberá o id do produto que será calculado o frete, e o segundo `cep` receberá o cep (sem pontuação) para que seja encontrado o estado referente ao cep informado,
+esta rota deverá calcular o frete do produto de acordo com as regras abaixo.
 
-Para encontrar o estado através do cep informado, usaremos a função `getStateFromZipcode`, da biblioteca `utils-playground`, que pode ser baixada no **NPM**, e pode ser encontrado no link abaixo:
+Para encontrar o estado através do cep informado, uso a função `getStateFromZipcode`, da biblioteca `utils-playground`, que pode ser baixada no **NPM**, e pode ser encontrado no link abaixo:
 
 https://www.npmjs.com/package/utils-playground
 
 
-**Regras para cálculo de frete**
+**Regras usadas no cálculo de frete**
 
 -   O valor padrão do frete será de `12%` do valor do produto
 -   Para os estados `BA, SE, AL, PE e PB` o valor do frete será de `10%`
 -   Para os estados `SP e RJ` o valor do frete será de `15%`
 
-**Exemplo:**
+**Exemplo: Listar**
 
-Caso chamado a rota **GET** `/produtos/1/frete/41256250`, a resposta deverá ser:
+![listar_produtos](https://github.com/ElisanaSalvador/Desafio-2.0-Cubos-Academy/assets/141875584/e76f1482-bbfc-4277-a187-a3883d2b8f44)
 
-```json
-{
-    "produto": {
-        "id": 1,
-        "nome": "Teclado mecânico Keychron K2",
-        "valor": 100000
-    },
-    "estado": "BA",
-    "frete": 10000
-}
-```
+**Exemplo: Detalhar um produto**
+
+![detalharProduto](https://github.com/ElisanaSalvador/Desafio-2.0-Cubos-Academy/assets/141875584/d62ab042-d335-4ace-8330-0725b26c7673)
+
+**Exemplo: Calcular frete do produto**
+
+![calcularFreteProduto](https://github.com/ElisanaSalvador/Desafio-2.0-Cubos-Academy/assets/141875584/a9948bb0-a36b-4f66-917f-13da7940e213)
+
+
 
 **Observações:**
 
--   É necessário se atentar para o uso do **await** quando uma função utiliza **promises**.
--   Todas as rotas deverão seguir os padrões **REST** o mais fielmente possível.
--   Todas as requisições deverão ser **assíncronas**.
+-   Todas as rotas seguem os padrões **REST**.
+-   Todas as requisições são **assíncronas**.
 
 ---
 
-Preencha a checklist para finalizar o exercício:
-
--   [ ] Resolver o exercício
--   [ ] Adicionar as mudanças aos commits (`git add .` para adicionar todos os arquivos, ou `git add nome_do_arquivo` para adicionar um arquivo específico)
--   [ ] Commitar a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
--   [ ] Pushar os commits na sua branch na origem (`git push origin nome-da-branch`)
-
-###### tags: `módulo 2` `exercícios` `lógica` `nodeJS`
- 
