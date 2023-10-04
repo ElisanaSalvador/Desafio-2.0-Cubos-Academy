@@ -59,3 +59,4 @@ Preencha a checklist para finalizar o exercício:
 -   [ ] Pushar os commits na sua branch na origem (`git push origin nome-da-branch`)
 
 ###### tags: `módulo 2` `exercícios` `lógica` `nodeJS`
+ 
